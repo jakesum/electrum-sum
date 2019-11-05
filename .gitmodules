@@ -1,0 +1,6 @@
+[submodule "contrib/deterministic-build/electrum-bynd-locale"]
+	path = contrib/deterministic-build/electrum-bynd-locale
+	url = https://github.com/beyondcoin-project/electrum-bynd-locale
+[submodule "contrib/CalinsQRReader"]
+	path = contrib/osx/CalinsQRReader
+	url = https://github.com/spesmilo/CalinsQRReader
