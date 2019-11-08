@@ -22,8 +22,8 @@ from .logging import Logger
 
 
 DEFAULT_ENABLED = False
-DEFAULT_CURRENCY = "EUR"
-DEFAULT_EXCHANGE = "CoinGecko"  # default exchange should ideally provide historical rates
+DEFAULT_CURRENCY = "USD"
+DEFAULT_EXCHANGE = "SumcoinIndex"  # default exchange should ideally provide historical rates
 
 
 # See https://en.wikipedia.org/wiki/ISO_4217
@@ -142,20 +142,20 @@ class ExchangeBase(Logger):
         return sorted([str(a) for (a, b) in rates.items() if b is not None and len(a)==3])
 
 
-class CoinGecko(ExchangeBase):
+class SumcoinIndex(ExchangeBase):
 
     async def get_rates(self, ccy):
-        json = await self.get_json('api.coingecko.com', '/api/v3/coins/beyondcoin?localization=false&tickers=false&community_data=false&developer_data=false&sparkline=false')
+        json = await self.get_json('rates.sumcoinindex.com', '/api/rates')
         return dict([(ccy.upper(), Decimal(d))
                      for ccy, d in json['market_data']['current_price'].items()])
 
     def history_ccys(self):
-        # CoinGecko seems to have historical data for all ccys it supports
+        # SumcoinIndex seems to have historical data for all ccys it supports
         return CURRENCIES[self.name()]
 
     async def request_history(self, ccy):
-        history = await self.get_json('api.coingecko.com',
-                                      '/api/v3/coins/beyondcoin/market_chart?vs_currency=%s&days=max' % ccy)
+        history = await self.get_json('rates.sumcoinindex.com',
+                                      '/api/rates' % ccy)
 
         return dict([(datetime.utcfromtimestamp(h[0]/1000).strftime('%Y-%m-%d'), h[1])
                      for h in history['prices']])
