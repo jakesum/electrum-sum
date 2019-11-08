@@ -15,22 +15,22 @@ import struct
 import sys
 import time
 
-from electrum_bynd.crypto import sha256d, EncodeAES_base64, EncodeAES_bytes, DecodeAES_bytes, hmac_oneshot
-from electrum_bynd.bitcoin import (TYPE_ADDRESS, push_script, var_int, public_key_to_p2pkh,
+from electrum_sum.crypto import sha256d, EncodeAES_base64, EncodeAES_bytes, DecodeAES_bytes, hmac_oneshot
+from electrum_sum.bitcoin import (TYPE_ADDRESS, push_script, var_int, public_key_to_p2pkh,
                                   is_address)
-from electrum_bynd.bip32 import BIP32Node
-from electrum_bynd import ecc
-from electrum_bynd.ecc import msg_magic
-from electrum_bynd.wallet import Standard_Wallet
-from electrum_bynd import constants
-from electrum_bynd.transaction import Transaction
-from electrum_bynd.i18n import _
-from electrum_bynd.keystore import Hardware_KeyStore
+from electrum_sum.bip32 import BIP32Node
+from electrum_sum import ecc
+from electrum_sum.ecc import msg_magic
+from electrum_sum.wallet import Standard_Wallet
+from electrum_sum import constants
+from electrum_sum.transaction import Transaction
+from electrum_sum.i18n import _
+from electrum_sum.keystore import Hardware_KeyStore
 from ..hw_wallet import HW_PluginBase
-from electrum_bynd.util import to_string, UserCancelled, UserFacingException
-from electrum_bynd.base_wizard import ScriptTypeNotSupported, HWD_SETUP_NEW_WALLET
-from electrum_bynd.network import Network
-from electrum_bynd.logging import get_logger
+from electrum_sum.util import to_string, UserCancelled, UserFacingException
+from electrum_sum.base_wizard import ScriptTypeNotSupported, HWD_SETUP_NEW_WALLET
+from electrum_sum.network import Network
+from electrum_sum.logging import get_logger
 
 
 _logger = get_logger(__name__)
@@ -313,7 +313,7 @@ class DigitalBitbox_Client():
 
     def dbb_generate_wallet(self):
         key = self.stretch_key(self.password)
-        filename = ("Electrum-BYND-" + time.strftime("%Y-%m-%d-%H-%M-%S") + ".pdf")
+        filename = ("Electrum-SUM-" + time.strftime("%Y-%m-%d-%H-%M-%S") + ".pdf")
         msg = ('{"seed":{"source": "create", "key": "%s", "filename": "%s", "entropy": "%s"}}' % (key, filename, to_hexstr(os.urandom(32)))).encode('utf8')
         reply = self.hid_send_encrypt(msg)
         if 'error' in reply:

@@ -13,7 +13,7 @@ prepare:
 	@cp ../../../run_electrum ../../../main.py
 	@-if [ ! -d "../../../.buildozer" ];then \
 		cd ../../..; buildozer android debug;\
-		cp -f electrum_bynd/gui/kivy/tools/blacklist.txt .buildozer/android/platform/python-for-android/src/blacklist.txt;\
+		cp -f electrum_sum/gui/kivy/tools/blacklist.txt .buildozer/android/platform/python-for-android/src/blacklist.txt;\
 		rm -rf ./.buildozer/android/platform/python-for-android/dist;\
 	fi
 apk:

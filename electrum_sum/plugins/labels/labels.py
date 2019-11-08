@@ -7,11 +7,11 @@ from typing import Union
 
 import base64
 
-from electrum_bynd.plugin import BasePlugin, hook
-from electrum_bynd.crypto import aes_encrypt_with_iv, aes_decrypt_with_iv
-from electrum_bynd.i18n import _
-from electrum_bynd.util import log_exceptions, ignore_exceptions, make_aiohttp_session
-from electrum_bynd.network import Network
+from electrum_sum.plugin import BasePlugin, hook
+from electrum_sum.crypto import aes_encrypt_with_iv, aes_decrypt_with_iv
+from electrum_sum.i18n import _
+from electrum_sum.util import log_exceptions, ignore_exceptions, make_aiohttp_session
+from electrum_sum.network import Network
 
 
 class ErrorConnectingServer(Exception):

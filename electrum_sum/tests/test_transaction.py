@@ -1,8 +1,8 @@
-from electrum_bynd import transaction
-from electrum_bynd.transaction import TxOutputForUI, tx_from_str
-from electrum_bynd.bitcoin import TYPE_ADDRESS
-from electrum_bynd.keystore import xpubkey_to_address
-from electrum_bynd.util import bh2u, bfh
+from electrum_sum import transaction
+from electrum_sum.transaction import TxOutputForUI, tx_from_str
+from electrum_sum.bitcoin import TYPE_ADDRESS
+from electrum_sum.keystore import xpubkey_to_address
+from electrum_sum.util import bh2u, bfh
 
 from . import SequentialTestCase, TestCaseForTestnet
 from .test_bitcoin import needs_test_with_all_ecc_implementations

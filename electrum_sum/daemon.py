@@ -300,7 +300,7 @@ class Daemon(DaemonThread):
             path = standardize_path(path)
             wallet = self.wallets.get(path)
             if wallet is None:
-                return {'error': 'Wallet "%s" is not loaded. Use "electrum-bynd daemon load_wallet"'%os.path.basename(path) }
+                return {'error': 'Wallet "%s" is not loaded. Use "electrum-sum daemon load_wallet"'%os.path.basename(path) }
         else:
             wallet = None
         # arguments passed to function
@@ -345,7 +345,7 @@ class Daemon(DaemonThread):
         gui_name = config.get('gui', 'qt')
         if gui_name in ['lite', 'classic']:
             gui_name = 'qt'
-        gui = __import__('electrum_bynd.gui.' + gui_name, fromlist=['electrum_bynd'])
+        gui = __import__('electrum_sum.gui.' + gui_name, fromlist=['electrum_sum'])
         self.gui = gui.ElectrumGui(config, self, plugins)
         try:
             self.gui.main()

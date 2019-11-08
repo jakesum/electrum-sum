@@ -30,12 +30,12 @@ from functools import partial
 from PyQt5.QtCore import QObject, pyqtSignal
 from PyQt5.QtWidgets import QVBoxLayout, QLineEdit, QHBoxLayout, QLabel
 
-from electrum_bynd.gui.qt.password_dialog import PasswordLayout, PW_PASSPHRASE
-from electrum_bynd.gui.qt.util import (read_QIcon, WWLabel, OkButton, WindowModalDialog,
+from electrum_sum.gui.qt.password_dialog import PasswordLayout, PW_PASSPHRASE
+from electrum_sum.gui.qt.util import (read_QIcon, WWLabel, OkButton, WindowModalDialog,
                                       Buttons, CancelButton, TaskThread, char_width_in_lineedit)
 
-from electrum_bynd.i18n import _
-from electrum_bynd.logging import Logger
+from electrum_sum.i18n import _
+from electrum_sum.logging import Logger
 
 from .plugin import OutdatedHwFirmwareException
 
@@ -190,9 +190,9 @@ class QtHandlerBase(QObject, Logger):
 
 
 
-from electrum_bynd.plugin import hook
-from electrum_bynd.util import UserCancelled
-from electrum_bynd.gui.qt.main_window import StatusBarButton
+from electrum_sum.plugin import hook
+from electrum_sum.util import UserCancelled
+from electrum_sum.gui.qt.main_window import StatusBarButton
 
 class QtPluginBase(object):
 

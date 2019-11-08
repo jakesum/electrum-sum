@@ -38,27 +38,27 @@ from PyQt5.QtWidgets import (QMenu, QHeaderView, QLabel, QMessageBox,
                              QPushButton, QComboBox, QVBoxLayout, QCalendarWidget,
                              QGridLayout)
 
-from electrum_bynd.address_synchronizer import TX_HEIGHT_LOCAL
-from electrum_bynd.i18n import _
-from electrum_bynd.util import (block_explorer_URL, profiler, TxMinedInfo,
+from electrum_sum.address_synchronizer import TX_HEIGHT_LOCAL
+from electrum_sum.i18n import _
+from electrum_sum.util import (block_explorer_URL, profiler, TxMinedInfo,
                                OrderedDictWithIndex, timestamp_to_datetime)
-from electrum_bynd.logging import get_logger, Logger
+from electrum_sum.logging import get_logger, Logger
 
 from .util import (read_QIcon, MONOSPACE_FONT, Buttons, CancelButton, OkButton,
                    filename_field, MyTreeView, AcceptFileDragDrop, WindowModalDialog,
                    CloseButton, webopen)
 
 if TYPE_CHECKING:
-    from electrum_bynd.wallet import Abstract_Wallet
+    from electrum_sum.wallet import Abstract_Wallet
 
 
 _logger = get_logger(__name__)
 
 
 try:
-    from electrum_bynd.plot import plot_history, NothingToPlotException
+    from electrum_sum.plot import plot_history, NothingToPlotException
 except:
-    _logger.info("could not import electrum_bynd.plot. This feature needs matplotlib to be installed.")
+    _logger.info("could not import electrum_sum.plot. This feature needs matplotlib to be installed.")
     plot_history = None
 
 # note: this list needs to be kept in sync with another in kivy

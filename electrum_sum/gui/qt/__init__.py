@@ -42,13 +42,13 @@ from PyQt5.QtWidgets import (QApplication, QSystemTrayIcon, QWidget, QMenu,
 from PyQt5.QtCore import QObject, pyqtSignal, QTimer
 import PyQt5.QtCore as QtCore
 
-from electrum_bynd.i18n import _, set_language
-from electrum_bynd.plugin import run_hook
-from electrum_bynd.base_wizard import GoBack
-from electrum_bynd.util import (UserCancelled, profiler,
+from electrum_sum.i18n import _, set_language
+from electrum_sum.plugin import run_hook
+from electrum_sum.base_wizard import GoBack
+from electrum_sum.util import (UserCancelled, profiler,
                                WalletFileException, BitcoinException, get_new_wallet_name)
-from electrum_bynd.wallet import Wallet, Abstract_Wallet
-from electrum_bynd.logging import Logger
+from electrum_sum.wallet import Wallet, Abstract_Wallet
+from electrum_sum.logging import Logger
 
 from .installwizard import InstallWizard, WalletAlreadyOpenInMemory
 
@@ -94,7 +94,7 @@ class ElectrumGui(Logger):
         if hasattr(QtCore.Qt, "AA_ShareOpenGLContexts"):
             QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_ShareOpenGLContexts)
         if hasattr(QGuiApplication, 'setDesktopFileName'):
-            QGuiApplication.setDesktopFileName('electrum-bynd.desktop')
+            QGuiApplication.setDesktopFileName('electrum-sum.desktop')
         self.gui_thread = threading.current_thread()
         self.config = config
         self.daemon = daemon
@@ -103,7 +103,7 @@ class ElectrumGui(Logger):
         self.efilter = OpenFileEventFilter(self.windows)
         self.app = QElectrumApplication(sys.argv)
         self.app.installEventFilter(self.efilter)
-        self.app.setWindowIcon(read_QIcon("electrum-bynd.png"))
+        self.app.setWindowIcon(read_QIcon("electrum-sum.png"))
         # timer
         self.timer = QTimer(self.app)
         self.timer.setSingleShot(False)
@@ -116,7 +116,7 @@ class ElectrumGui(Logger):
         # init tray
         self.dark_icon = self.config.get("dark_icon", False)
         self.tray = QSystemTrayIcon(self.tray_icon(), None)
-        self.tray.setToolTip('Electrum-BYND')
+        self.tray.setToolTip('Electrum-SUM')
         self.tray.activated.connect(self.tray_activated)
         self.build_tray_menu()
         self.tray.show()
@@ -154,7 +154,7 @@ class ElectrumGui(Logger):
             submenu.addAction(_("Close"), window.close)
         m.addAction(_("Dark/Light"), self.toggle_tray_icon)
         m.addSeparator()
-        m.addAction(_("Exit Electrum-BYND"), self.close)
+        m.addAction(_("Exit Electrum-SUM"), self.close)
 
     def tray_icon(self):
         if self.dark_icon:

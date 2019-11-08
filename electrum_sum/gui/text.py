@@ -7,15 +7,15 @@ from decimal import Decimal
 import getpass
 import logging
 
-import electrum_bynd as electrum
-from electrum_bynd.util import format_satoshis
-from electrum_bynd.bitcoin import is_address, COIN, TYPE_ADDRESS
-from electrum_bynd.transaction import TxOutput
-from electrum_bynd.wallet import Wallet
-from electrum_bynd.storage import WalletStorage
-from electrum_bynd.network import NetworkParameters, TxBroadcastError, BestEffortRequestFailed
-from electrum_bynd.interface import deserialize_server
-from electrum_bynd.logging import console_stderr_handler
+import electrum_sum as electrum
+from electrum_sum.util import format_satoshis
+from electrum_sum.bitcoin import is_address, COIN, TYPE_ADDRESS
+from electrum_sum.transaction import TxOutput
+from electrum_sum.wallet import Wallet
+from electrum_sum.storage import WalletStorage
+from electrum_sum.network import NetworkParameters, TxBroadcastError, BestEffortRequestFailed
+from electrum_sum.interface import deserialize_server
+from electrum_sum.logging import console_stderr_handler
 
 _ = lambda x:x  # i18n
 
@@ -28,7 +28,7 @@ class ElectrumGui:
         self.network = daemon.network
         storage = WalletStorage(config.get_wallet_path())
         if not storage.file_exists():
-            print("Wallet not found. try 'electrum-bynd create'")
+            print("Wallet not found. try 'electrum-sum create'")
             exit()
         if storage.is_encrypted():
             password = getpass.getpass('Password:', stream=None)

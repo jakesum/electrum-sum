@@ -24,11 +24,11 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from electrum_bynd.plugin import BasePlugin, hook
-from electrum_bynd.i18n import _
-from electrum_bynd.bitcoin import is_address, TYPE_SCRIPT, opcodes
-from electrum_bynd.util import bfh, versiontuple, UserFacingException
-from electrum_bynd.transaction import TxOutput, Transaction
+from electrum_sum.plugin import BasePlugin, hook
+from electrum_sum.i18n import _
+from electrum_sum.bitcoin import is_address, TYPE_SCRIPT, opcodes
+from electrum_sum.util import bfh, versiontuple, UserFacingException
+from electrum_sum.transaction import TxOutput, Transaction
 
 
 class HW_PluginBase(BasePlugin):

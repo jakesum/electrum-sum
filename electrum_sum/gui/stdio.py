@@ -3,12 +3,12 @@ import getpass
 import datetime
 import logging
 
-from electrum_bynd import WalletStorage, Wallet
-from electrum_bynd.util import format_satoshis
-from electrum_bynd.bitcoin import is_address, COIN, TYPE_ADDRESS
-from electrum_bynd.transaction import TxOutput
-from electrum_bynd.network import TxBroadcastError, BestEffortRequestFailed
-from electrum_bynd.logging import console_stderr_handler
+from electrum_sum import WalletStorage, Wallet
+from electrum_sum.util import format_satoshis
+from electrum_sum.bitcoin import is_address, COIN, TYPE_ADDRESS
+from electrum_sum.transaction import TxOutput
+from electrum_sum.network import TxBroadcastError, BestEffortRequestFailed
+from electrum_sum.logging import console_stderr_handler
 
 _ = lambda x:x  # i18n
 
@@ -23,7 +23,7 @@ class ElectrumGui:
         self.network = daemon.network
         storage = WalletStorage(config.get_wallet_path())
         if not storage.file_exists:
-            print("Wallet not found. try 'electrum-bynd create'")
+            print("Wallet not found. try 'electrum-sum create'")
             exit()
         if storage.is_encrypted():
             password = getpass.getpass('Password:', stream=None)
@@ -220,12 +220,12 @@ class ElectrumGui:
             #self.update_contacts_tab()
 
     def network_dialog(self):
-        print("use 'electrum-bynd setconfig server/proxy' to change your network settings")
+        print("use 'electrum-sum setconfig server/proxy' to change your network settings")
         return True
 
 
     def settings_dialog(self):
-        print("use 'electrum-bynd setconfig' to change your settings")
+        print("use 'electrum-sum setconfig' to change your settings")
         return True
 
     def password_dialog(self):

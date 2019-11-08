@@ -1,14 +1,14 @@
 import os
 
-from electrum_bynd.simple_config import SimpleConfig
-from electrum_bynd import constants
-from electrum_bynd.daemon import Daemon
-from electrum_bynd.storage import WalletStorage
-from electrum_bynd.wallet import Wallet, create_new_wallet
-from electrum_bynd.commands import Commands
+from electrum_sum.simple_config import SimpleConfig
+from electrum_sum import constants
+from electrum_sum.daemon import Daemon
+from electrum_sum.storage import WalletStorage
+from electrum_sum.wallet import Wallet, create_new_wallet
+from electrum_sum.commands import Commands
 
 
-config = SimpleConfig({"testnet": True})  # to use ~/.electrum-bynd/testnet as datadir
+config = SimpleConfig({"testnet": True})  # to use ~/.electrum-sum/testnet as datadir
 constants.set_testnet()  # to set testnet magic bytes
 daemon = Daemon(config, listen_jsonrpc=False)
 network = daemon.network

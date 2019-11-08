@@ -7,14 +7,14 @@ from decimal import Decimal
 import time
 
 from io import StringIO
-from electrum_bynd.storage import WalletStorage
-from electrum_bynd.json_db import FINAL_SEED_VERSION
-from electrum_bynd.wallet import (Abstract_Wallet, Standard_Wallet, create_new_wallet,
+from electrum_sum.storage import WalletStorage
+from electrum_sum.json_db import FINAL_SEED_VERSION
+from electrum_sum.wallet import (Abstract_Wallet, Standard_Wallet, create_new_wallet,
                                  restore_wallet_from_text, Imported_Wallet)
-from electrum_bynd.exchange_rate import ExchangeBase, FxThread
-from electrum_bynd.util import TxMinedInfo
-from electrum_bynd.bitcoin import COIN
-from electrum_bynd.json_db import JsonDB
+from electrum_sum.exchange_rate import ExchangeBase, FxThread
+from electrum_sum.util import TxMinedInfo
+from electrum_sum.bitcoin import COIN
+from electrum_sum.json_db import JsonDB
 
 from . import SequentialTestCase
 

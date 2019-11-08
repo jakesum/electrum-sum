@@ -41,13 +41,13 @@ from PyQt5.QtCore import QObject, pyqtSignal, QThread
 from PyQt5.QtWidgets import (QVBoxLayout, QLabel, QGridLayout, QLineEdit,
                              QInputDialog)
 
-from electrum_bynd.gui.qt.util import (EnterButton, Buttons, CloseButton, OkButton,
+from electrum_sum.gui.qt.util import (EnterButton, Buttons, CloseButton, OkButton,
                                       WindowModalDialog, get_parent_main_window)
 
-from electrum_bynd.plugin import BasePlugin, hook
-from electrum_bynd.paymentrequest import PaymentRequest
-from electrum_bynd.i18n import _
-from electrum_bynd.logging import Logger
+from electrum_sum.plugin import BasePlugin, hook
+from electrum_sum.paymentrequest import PaymentRequest
+from electrum_sum.i18n import _
+from electrum_sum.logging import Logger
 
 
 class Processor(threading.Thread, Logger):
@@ -114,7 +114,7 @@ class Processor(threading.Thread, Logger):
         part = MIMEBase('application', "sumcoin-paymentrequest")
         part.set_payload(payment_request)
         encode_base64(part)
-        part.add_header('Content-Disposition', 'attachment; filename="payreq.bynd"')
+        part.add_header('Content-Disposition', 'attachment; filename="payreq.sum"')
         msg.attach(part)
         try:
             s = smtplib.SMTP_SSL(self.imap_server, timeout=2)
@@ -176,7 +176,7 @@ class Plugin(BasePlugin):
         menu.addAction(_("Send via e-mail"), lambda: self.send(window, addr))
 
     def send(self, window, addr):
-        from electrum_bynd import paymentrequest
+        from electrum_sum import paymentrequest
         r = window.wallet.receive_requests.get(addr)
         message = r.get('memo', '')
         if r.get('signature'):

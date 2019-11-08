@@ -2,9 +2,9 @@ import shutil
 import tempfile
 import os
 
-from electrum_bynd.storage import WalletStorage
-from electrum_bynd.wallet import Wallet
-from electrum_bynd import constants
+from electrum_sum.storage import WalletStorage
+from electrum_sum.wallet import Wallet
+from electrum_sum import constants
 
 from .test_wallet import WalletTestCase
 
@@ -275,8 +275,8 @@ class TestStorageUpgrade(WalletTestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        from electrum_bynd.plugin import Plugins
-        from electrum_bynd.simple_config import SimpleConfig
+        from electrum_sum.plugin import Plugins
+        from electrum_sum.simple_config import SimpleConfig
 
         cls.electrum_path = tempfile.mkdtemp()
         config = SimpleConfig({'electrum_path': cls.electrum_path})

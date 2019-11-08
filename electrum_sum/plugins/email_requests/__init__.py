@@ -1,4 +1,4 @@
-from electrum_bynd.i18n import _
+from electrum_sum.i18n import _
 
 fullname = _('Email')
 description = _("Send and receive payment request with an email account")

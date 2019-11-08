@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import asyncio
 
-from electrum_bynd.network import filter_protocol, Network
-from electrum_bynd.util import create_and_start_event_loop, log_exceptions
-from electrum_bynd.blockchain import hash_raw_header
+from electrum_sum.network import filter_protocol, Network
+from electrum_sum.util import create_and_start_event_loop, log_exceptions
+from electrum_sum.blockchain import hash_raw_header
 
 loop, stopping_fut, loop_thread = create_and_start_event_loop()
 network = Network()

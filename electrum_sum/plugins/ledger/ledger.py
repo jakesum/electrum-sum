@@ -3,16 +3,16 @@ import hashlib
 import sys
 import traceback
 
-from electrum_bynd import ecc
-from electrum_bynd.bitcoin import TYPE_ADDRESS, int_to_hex, var_int, is_segwit_script_type
-from electrum_bynd.bip32 import BIP32Node
-from electrum_bynd.i18n import _
-from electrum_bynd.keystore import Hardware_KeyStore
-from electrum_bynd.transaction import Transaction
-from electrum_bynd.wallet import Standard_Wallet
-from electrum_bynd.util import bfh, bh2u, versiontuple, UserFacingException
-from electrum_bynd.base_wizard import ScriptTypeNotSupported
-from electrum_bynd.logging import get_logger
+from electrum_sum import ecc
+from electrum_sum.bitcoin import TYPE_ADDRESS, int_to_hex, var_int, is_segwit_script_type
+from electrum_sum.bip32 import BIP32Node
+from electrum_sum.i18n import _
+from electrum_sum.keystore import Hardware_KeyStore
+from electrum_sum.transaction import Transaction
+from electrum_sum.wallet import Standard_Wallet
+from electrum_sum.util import bfh, bh2u, versiontuple, UserFacingException
+from electrum_sum.base_wizard import ScriptTypeNotSupported
+from electrum_sum.logging import get_logger
 
 from ..hw_wallet import HW_PluginBase
 from ..hw_wallet.plugin import is_any_tx_output_on_change_branch

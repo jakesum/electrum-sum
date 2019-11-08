@@ -1,6 +1,6 @@
 import dns
 
-from electrum_bynd import dnssec
+from electrum_sum import dnssec
 
 from . import SequentialTestCase
 from .test_bitcoin import needs_test_with_all_ecc_implementations

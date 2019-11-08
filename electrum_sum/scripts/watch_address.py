@@ -3,9 +3,9 @@
 import sys
 import asyncio
 
-from electrum_bynd.network import Network
-from electrum_bynd.util import print_msg, create_and_start_event_loop
-from electrum_bynd.synchronizer import SynchronizerBase
+from electrum_sum.network import Network
+from electrum_sum.util import print_msg, create_and_start_event_loop
+from electrum_sum.synchronizer import SynchronizerBase
 
 
 try:

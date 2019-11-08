@@ -1,5 +1,5 @@
 from .labels import LabelsPlugin
-from electrum_bynd.plugin import hook
+from electrum_sum.plugin import hook
 
 class Plugin(LabelsPlugin):
 

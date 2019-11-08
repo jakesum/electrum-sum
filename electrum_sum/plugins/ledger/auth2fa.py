@@ -13,10 +13,10 @@ from PyQt5.QtCore import QThread, pyqtSignal
 
 from btchip.btchip import BTChipException
 
-from electrum_bynd.gui.qt.qrcodewidget import QRCodeWidget
-from electrum_bynd.i18n import _
-from electrum_bynd import constants, bitcoin
-from electrum_bynd.logging import get_logger
+from electrum_sum.gui.qt.qrcodewidget import QRCodeWidget
+from electrum_sum.i18n import _
+from electrum_sum import constants, bitcoin
+from electrum_sum.logging import get_logger
 
 
 _logger = get_logger(__name__)

@@ -29,11 +29,11 @@ from PyQt5.QtCore import Qt, QPersistentModelIndex, QModelIndex
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QFont
 from PyQt5.QtWidgets import QAbstractItemView, QComboBox, QLabel, QMenu
 
-from electrum_bynd.i18n import _
-from electrum_bynd.util import block_explorer_URL, profiler
-from electrum_bynd.plugin import run_hook
-from electrum_bynd.bitcoin import is_address
-from electrum_bynd.wallet import InternalAddressCorruption
+from electrum_sum.i18n import _
+from electrum_sum.util import block_explorer_URL, profiler
+from electrum_sum.plugin import run_hook
+from electrum_sum.bitcoin import is_address
+from electrum_sum.wallet import InternalAddressCorruption
 
 from .util import MyTreeView, MONOSPACE_FONT, ColorScheme, webopen
 
@@ -176,7 +176,7 @@ class AddressList(MyTreeView):
         self.filter()
 
     def create_menu(self, position):
-        from electrum_bynd.wallet import Multisig_Wallet
+        from electrum_sum.wallet import Multisig_Wallet
         is_multisig = isinstance(self.wallet, Multisig_Wallet)
         can_delete = self.wallet.can_delete_address()
         selected = self.selected_in_column(self.Columns.ADDRESS)

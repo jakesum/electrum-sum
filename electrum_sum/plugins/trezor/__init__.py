@@ -1,4 +1,4 @@
-from electrum_bynd.i18n import _
+from electrum_sum.i18n import _
 
 fullname = 'Trezor Wallet'
 description = _('Provides support for Trezor hardware wallet')

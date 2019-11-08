@@ -1,5 +1,5 @@
-from electrum_bynd.util import print_stderr, raw_input
-from electrum_bynd.logging import get_logger
+from electrum_sum.util import print_stderr, raw_input
+from electrum_sum.logging import get_logger
 
 
 _logger = get_logger(__name__)

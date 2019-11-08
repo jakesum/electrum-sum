@@ -1,13 +1,13 @@
 import time
 from struct import pack
 
-from electrum_bynd import ecc
-from electrum_bynd.i18n import _
-from electrum_bynd.util import UserCancelled, UserFacingException
-from electrum_bynd.keystore import bip39_normalize_passphrase
-from electrum_bynd.bip32 import BIP32Node, convert_bip32_path_to_list_of_uint32 as parse_path
-from electrum_bynd.logging import Logger
-from electrum_bynd.plugins.hw_wallet.plugin import OutdatedHwFirmwareException
+from electrum_sum import ecc
+from electrum_sum.i18n import _
+from electrum_sum.util import UserCancelled, UserFacingException
+from electrum_sum.keystore import bip39_normalize_passphrase
+from electrum_sum.bip32 import BIP32Node, convert_bip32_path_to_list_of_uint32 as parse_path
+from electrum_sum.logging import Logger
+from electrum_sum.plugins.hw_wallet.plugin import OutdatedHwFirmwareException
 
 from trezorlib.client import TrezorClient
 from trezorlib.exceptions import TrezorFailure, Cancelled, OutdatedFirmwareError

@@ -1,7 +1,7 @@
 import base64
 import sys
 
-from electrum_bynd.bitcoin import (public_key_to_p2pkh, address_from_private_key,
+from electrum_sum.bitcoin import (public_key_to_p2pkh, address_from_private_key,
                                   is_address, is_private_key,
                                   var_int, _op_push, address_to_script,
                                   deserialize_privkey, serialize_privkey, is_segwit_address,
@@ -9,18 +9,18 @@ from electrum_bynd.bitcoin import (public_key_to_p2pkh, address_from_private_key
                                   is_compressed_privkey, EncodeBase58Check, DecodeBase58Check,
                                   script_num_to_hex, push_script, add_number_to_script, int_to_hex,
                                   opcodes, base_encode, base_decode, BitcoinException)
-from electrum_bynd.bip32 import (BIP32Node, convert_bip32_intpath_to_strpath,
+from electrum_sum.bip32 import (BIP32Node, convert_bip32_intpath_to_strpath,
                                 xpub_from_xprv, xpub_type, is_xprv, is_bip32_derivation,
                                 is_xpub, convert_bip32_path_to_list_of_uint32,
                                 normalize_bip32_derivation)
-from electrum_bynd.crypto import sha256d, SUPPORTED_PW_HASH_VERSIONS
-from electrum_bynd import ecc, crypto, constants
-from electrum_bynd.ecc import number_to_string, string_to_number
-from electrum_bynd.util import bfh, bh2u, InvalidPassword
-from electrum_bynd.storage import WalletStorage
-from electrum_bynd.keystore import xtype_from_derivation
+from electrum_sum.crypto import sha256d, SUPPORTED_PW_HASH_VERSIONS
+from electrum_sum import ecc, crypto, constants
+from electrum_sum.ecc import number_to_string, string_to_number
+from electrum_sum.util import bfh, bh2u, InvalidPassword
+from electrum_sum.storage import WalletStorage
+from electrum_sum.keystore import xtype_from_derivation
 
-from electrum_bynd import ecc_fast
+from electrum_sum import ecc_fast
 
 from . import SequentialTestCase
 from . import TestCaseForTestnet

@@ -1,7 +1,7 @@
-#:import VERSION electrum_bynd.version.ELECTRUM_VERSION
+#:import VERSION electrum_sum.version.ELECTRUM_VERSION
 
 Popup:
-    title: _("About Electrum-BYND")
+    title: _("About Electrum-SUM")
     BoxLayout:
         orientation: 'vertical'
         spacing: '10dp'
@@ -26,10 +26,10 @@ Popup:
                 size_hint_x: 0.4
             TopLabel:
                 markup: True
-                text: '[color=6666ff][ref=x]https://electrum-bynd.com[/ref][/color]'
+                text: '[color=6666ff][ref=x]https://electrum-sum.org[/ref][/color]'
                 on_ref_press:
                     import webbrowser
-                    webbrowser.open("https://electrum-bynd.com")
+                    webbrowser.open("https://electrum-sum.org")
                 size_hint_x: 0.6
             TopLabel:
                 text: _('Developers')

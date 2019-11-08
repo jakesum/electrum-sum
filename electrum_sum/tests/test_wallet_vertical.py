@@ -5,14 +5,14 @@ import tempfile
 from typing import Sequence
 import asyncio
 
-from electrum_bynd import storage, bitcoin, keystore, bip32
-from electrum_bynd import Transaction
-from electrum_bynd import SimpleConfig
-from electrum_bynd.address_synchronizer import TX_HEIGHT_UNCONFIRMED, TX_HEIGHT_UNCONF_PARENT
-from electrum_bynd.wallet import sweep, Multisig_Wallet, Standard_Wallet, Imported_Wallet, restore_wallet_from_text
-from electrum_bynd.util import bfh, bh2u
-from electrum_bynd.transaction import TxOutput
-from electrum_bynd.mnemonic import seed_type
+from electrum_sum import storage, bitcoin, keystore, bip32
+from electrum_sum import Transaction
+from electrum_sum import SimpleConfig
+from electrum_sum.address_synchronizer import TX_HEIGHT_UNCONFIRMED, TX_HEIGHT_UNCONF_PARENT
+from electrum_sum.wallet import sweep, Multisig_Wallet, Standard_Wallet, Imported_Wallet, restore_wallet_from_text
+from electrum_sum.util import bfh, bh2u
+from electrum_sum.transaction import TxOutput
+from electrum_sum.mnemonic import seed_type
 
 from . import TestCaseForTestnet
 from . import SequentialTestCase

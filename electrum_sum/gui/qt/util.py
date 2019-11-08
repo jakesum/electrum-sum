@@ -22,10 +22,10 @@ from PyQt5.QtWidgets import (QPushButton, QLabel, QMessageBox, QHBoxLayout,
                              QFileDialog, QWidget, QToolButton, QTreeView, QPlainTextEdit,
                              QHeaderView, QApplication, QToolTip, QTreeWidget, QStyledItemDelegate)
 
-from electrum_bynd.i18n import _, languages
-from electrum_bynd.util import (FileImportFailed, FileExportFailed,
+from electrum_sum.i18n import _, languages
+from electrum_sum.util import (FileImportFailed, FileExportFailed,
                                resource_path)
-from electrum_bynd.paymentrequest import PR_UNPAID, PR_PAID, PR_EXPIRED
+from electrum_sum.paymentrequest import PR_UNPAID, PR_PAID, PR_EXPIRED
 
 if TYPE_CHECKING:
     from .main_window import ElectrumWindow
@@ -819,7 +819,7 @@ def import_meta_gui(electrum_window, title, importer, on_success):
 def export_meta_gui(electrum_window, title, exporter):
     filter_ = "JSON (*.json);;All files (*)"
     filename = electrum_window.getSaveFileName(_("Select file to save your {}").format(title),
-                                               'electrum-bynd_{}.json'.format(title), filter_)
+                                               'electrum-sum_{}.json'.format(title), filter_)
     if not filename:
         return
     try:

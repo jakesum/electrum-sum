@@ -10,17 +10,17 @@ from PyQt5.QtCore import Qt, QThread, pyqtSignal
 from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QLabel, QProgressBar,
                              QHBoxLayout, QPushButton)
 
-from electrum_bynd import version
-from electrum_bynd import constants
-from electrum_bynd import ecc
-from electrum_bynd.i18n import _
-from electrum_bynd.util import make_aiohttp_session
-from electrum_bynd.logging import Logger
+from electrum_sum import version
+from electrum_sum import constants
+from electrum_sum import ecc
+from electrum_sum.i18n import _
+from electrum_sum.util import make_aiohttp_session
+from electrum_sum.logging import Logger
 
 
 class UpdateCheck(QWidget, Logger):
-    url = "https://electrum-bynd.com/version"
-    download_url = "https://electrum-bynd.com/#download"
+    url = "https://electrum-sum.org/version"
+    download_url = "https://electrum-sum.org/#download"
 
     VERSION_ANNOUNCEMENT_SIGNING_KEYS = (
         "LWZzbv5SbiRRjBDL6dUYRdBX9Dp89RDZgG",
@@ -29,7 +29,7 @@ class UpdateCheck(QWidget, Logger):
     def __init__(self, main_window, latest_version=None):
         self.main_window = main_window
         QWidget.__init__(self)
-        self.setWindowTitle('Electrum-BYND - ' + _('Update Check'))
+        self.setWindowTitle('Electrum-SUM - ' + _('Update Check'))
         self.content = QVBoxLayout()
         self.content.setContentsMargins(*[10]*4)
 

@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QFileDialog
 
-from electrum_bynd.i18n import _
-from electrum_bynd.plugin import run_hook
+from electrum_sum.i18n import _
+from electrum_sum.plugin import run_hook
 
 from .util import ButtonsTextEdit, MessageBoxMixin, ColorScheme
 

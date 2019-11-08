@@ -2,9 +2,9 @@ import unittest
 from unittest import mock
 from decimal import Decimal
 
-from electrum_bynd.commands import Commands, eval_bool
-from electrum_bynd import storage
-from electrum_bynd.wallet import restore_wallet_from_text
+from electrum_sum.commands import Commands, eval_bool
+from electrum_sum import storage
+from electrum_sum.wallet import restore_wallet_from_text
 
 from . import TestCaseForTestnet
 

@@ -28,11 +28,11 @@ from decimal import Decimal
 
 from PyQt5.QtGui import QFontMetrics
 
-from electrum_bynd import bitcoin
-from electrum_bynd.util import bfh
-from electrum_bynd.transaction import TxOutput, push_script
-from electrum_bynd.bitcoin import opcodes
-from electrum_bynd.logging import Logger
+from electrum_sum import bitcoin
+from electrum_sum.util import bfh
+from electrum_sum.transaction import TxOutput, push_script
+from electrum_sum.bitcoin import opcodes
+from electrum_sum.logging import Logger
 
 from .qrtextedit import ScanQRTextEdit
 from .completion_text_edit import CompletionTextEdit

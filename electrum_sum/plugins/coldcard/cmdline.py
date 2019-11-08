@@ -1,6 +1,6 @@
-from electrum_bynd.plugin import hook
-from electrum_bynd.util import print_msg, raw_input, print_stderr
-from electrum_bynd.logging import get_logger
+from electrum_sum.plugin import hook
+from electrum_sum.util import print_msg, raw_input, print_stderr
+from electrum_sum.logging import get_logger
 
 from .coldcard import ColdcardPlugin
 
