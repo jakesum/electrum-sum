@@ -1,14 +1,3 @@
 {
-    "electrum-bynd-test.beyondcoin.io": {
-        "pruning": "-",
-        "s": "51002",
-        "t": "51001",
-        "version": "1.4"
-    },
-    "testnet.electrum-bynd.com": {
-        "pruning": "-",
-        "s": "51002",
-        "t": "51001",
-        "version": "1.4"
-    }
+    // TODO: Add testnet electrum servers
 }
