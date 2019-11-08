@@ -1,5 +1,5 @@
-AppImage binary for Electrum-BYND
-=================================
+AppImage binary for Electrum-SUM
+================================
 
 ✓ _This binary should be reproducible, meaning you should be able to generate
    binaries that match the official releases._
@@ -25,18 +25,18 @@ see [issue #5159](https://github.com/spesmilo/electrum/issues/5159).
 2. Build image
 
     ```
-    $ sudo docker build -t electrum-bynd-appimage-builder-img contrib/build-linux/appimage
+    $ sudo docker build -t electrum-sum-appimage-builder-img contrib/build-linux/appimage
     ```
 
 3. Build binary
 
     ```
     $ sudo docker run -it \
-        --name electrum-bynd-appimage-builder-cont \
-        -v $PWD:/opt/electrum-bynd \
+        --name electrum-sum-appimage-builder-cont \
+        -v $PWD:/opt/electrum-sum \
         --rm \
-        --workdir /opt/electrum-bynd/contrib/build-linux/appimage \
-        electrum-bynd-appimage-builder-img \
+        --workdir /opt/electrum-sum/contrib/build-linux/appimage \
+        electrum-sum-appimage-builder-img \
         ./build.sh
     ```
 

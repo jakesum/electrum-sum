@@ -1,0 +1,22 @@
+# If you want Electrum to appear in a Linux app launcher ("start menu"), install this by doing:
+# sudo desktop-file-install electrum-sum.desktop
+
+[Desktop Entry]
+Comment=Lightweight Sumcoin Client
+Exec=sh -c "PATH=\"\\$HOME/.local/bin:\\$PATH\"; electrum-sum %u"
+GenericName[en_US]=Sumcoin Wallet
+GenericName=Sumcoin Wallet
+Icon=electrum-sum
+Name[en_US]=Electrum Sumcoin Wallet
+Name=Electrum Sumcoin Wallet
+Categories=Finance;Network;
+StartupNotify=true
+StartupWMClass=electrum-sum
+Terminal=false
+Type=Application
+MimeType=x-scheme-handler/sumcoin;
+Actions=Testnet;
+
+[Desktop Action Testnet]
+Exec=sh -c "PATH=\"\\$HOME/.local/bin:\\$PATH\"; electrum-sum --testnet %u"
+Name=Testnet mode

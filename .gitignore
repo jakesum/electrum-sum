@@ -4,8 +4,8 @@
 build/
 dist/
 *.egg/
-Electrum_BYND.egg-info/
-electrum_bynd/locale/
+Electrum_SUM.egg-info/
+electrum_sum/locale/
 .devlocaltmp/
 *_trial_temp
 packages
@@ -16,8 +16,8 @@ bin/
 .idea
 
 # icons
-electrum_bynd/gui/kivy/theming/light-0.png
-electrum_bynd/gui/kivy/theming/light.atlas
+electrum_sum/gui/kivy/theming/light-0.png
+electrum_sum/gui/kivy/theming/light.atlas
 
 # tests/tox
 .tox/

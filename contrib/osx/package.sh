@@ -17,15 +17,15 @@ export PATH=$PATH:~/bin
 . $(dirname "$0")/base.sh
 
 if [ -z "$1" ]; then
-    echo "Usage: $0 Electrum-BYND.app"
+    echo "Usage: $0 Electrum-SUM.app"
     exit -127
 fi
 
 mkdir -p ~/bin
 
 if ! which ${genisoimage} > /dev/null 2>&1; then
-	mkdir -p /tmp/electrum-bynd-macos
-	cd /tmp/electrum-bynd-macos
+	mkdir -p /tmp/electrum-sum-macos
+	cd /tmp/electrum-sum-macos
 	info "Downloading cdrkit $cdrkit_version"
 	wget -nc ${cdrkit_download_path}/${cdrkit_file_name}
 	tar xvf ${cdrkit_file_name}
@@ -41,8 +41,8 @@ if ! which ${genisoimage} > /dev/null 2>&1; then
 fi
 
 if ! which dmg > /dev/null 2>&1; then
-    mkdir -p /tmp/electrum-bynd-macos
-	cd /tmp/electrum-bynd-macos
+    mkdir -p /tmp/electrum-sum-macos
+	cd /tmp/electrum-sum-macos
 	info "Downloading libdmg"
     LD_PRELOAD= git clone ${libdmg_url}
     cd libdmg-hfsplus
@@ -60,9 +60,9 @@ test -f "$plist" || fail "Info.plist not found"
 VERSION=$(grep -1 ShortVersionString $plist |tail -1|gawk 'match($0, /<string>(.*)<\/string>/, a) {print a[1]}')
 echo $VERSION
 
-rm -rf /tmp/electrum-bynd-macos/image > /dev/null 2>&1
-mkdir /tmp/electrum-bynd-macos/image/
-cp -r $1 /tmp/electrum-bynd-macos/image/
+rm -rf /tmp/electrum-sum-macos/image > /dev/null 2>&1
+mkdir /tmp/electrum-sum-macos/image/
+cp -r $1 /tmp/electrum-sum-macos/image/
 
 build_dir=$(dirname "$1")
 test -n "$build_dir" -a -d "$build_dir" || exit
@@ -73,16 +73,16 @@ ${genisoimage} \
     -D \
     -l \
     -probe \
-    -V "Electrum-BYND" \
+    -V "Electrum-SUM" \
     -no-pad \
     -r \
     -dir-mode 0755 \
     -apple \
-    -o Electrum-BYND_uncompressed.dmg \
-    /tmp/electrum-bynd-macos/image || fail "Unable to create uncompressed dmg"
+    -o Electrum-SUM_uncompressed.dmg \
+    /tmp/electrum-sum-macos/image || fail "Unable to create uncompressed dmg"
 
-dmg dmg Electrum-BYND_uncompressed.dmg electrum-bynd-$VERSION.dmg || fail "Unable to create compressed dmg"
-rm Electrum-BYND_uncompressed.dmg
+dmg dmg Electrum-SUM_uncompressed.dmg electrum-sum-$VERSION.dmg || fail "Unable to create compressed dmg"
+rm Electrum-SUM_uncompressed.dmg
 
 echo "Done."
-sha256sum electrum-bynd-$VERSION.dmg
+sha256sum electrum-sum-$VERSION.dmg

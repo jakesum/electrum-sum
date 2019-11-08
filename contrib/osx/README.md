@@ -4,7 +4,7 @@ Building Mac OS binaries
 ✗ _This script does not produce reproducible output (yet!).
    Please help us remedy this._
 
-This guide explains how to build Electrum-BYND binaries for macOS systems.
+This guide explains how to build Electrum-SUM binaries for macOS systems.
 
 
 ## 1. Building the binary
@@ -46,12 +46,12 @@ On newer Mac, run:
 Move `prebuilt_qr` to El Capitan: `contrib/osx/CalinsQRReader/prebuilt_qr`.
 
 
-#### 1.2 Build Electrum-BYND
+#### 1.2 Build Electrum-SUM
 
-    cd electrum-bynd
+    cd electrum-sum
     ./contrib/osx/make_osx
     
-This creates both a folder named Electrum-BYND.app and the .dmg file.
+This creates both a folder named Electrum-SUM.app and the .dmg file.
 
 
 ## 2. Building the image deterministically (WIP)
@@ -62,11 +62,11 @@ they are not deterministic.
 Instead, we use the toolchain that Bitcoin uses: genisoimage and libdmg-hfsplus.
 These tools do not work on macOS, so you need a separate Linux machine (or VM).
 
-Copy the Electrum-BYND.app directory over and install the dependencies, e.g.:
+Copy the Electrum-SUM.app directory over and install the dependencies, e.g.:
 
     apt install libcap-dev cmake make gcc faketime
     
 Then you can just invoke `package.sh` with the path to the app:
 
-    cd electrum-bynd
-    ./contrib/osx/package.sh ~/Electrum-BYND.app/
+    cd electrum-sum
+    ./contrib/osx/package.sh ~/Electrum-SUM.app/

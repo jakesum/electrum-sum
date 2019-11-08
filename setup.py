@@ -26,7 +26,7 @@ with open('contrib/requirements/requirements-hw.txt') as f:
     requirements_hw = f.read().splitlines()
 
 # load version.py; needlessly complicated alternative to "imp.load_source":
-version_spec = importlib.util.spec_from_file_location('version', 'electrum_bynd/version.py')
+version_spec = importlib.util.spec_from_file_location('version', 'electrum_sum/version.py')
 version_module = version = importlib.util.module_from_spec(version_spec)
 version_spec.loader.exec_module(version_module)
 
@@ -46,8 +46,8 @@ if platform.system() in ['Linux', 'FreeBSD', 'DragonFly']:
         else:
             usr_share = os.path.expanduser('~/.local/share')
     data_files += [
-        (os.path.join(usr_share, 'applications/'), ['electrum-bynd.desktop']),
-        (os.path.join(usr_share, icons_dirname), ['electrum_bynd/gui/icons/electrum-bynd.png']),
+        (os.path.join(usr_share, 'applications/'), ['electrum-sum.desktop']),
+        (os.path.join(usr_share, icons_dirname), ['electrum_sum/gui/icons/electrum-sum.png']),
     ]
 
 extras_require = {
@@ -59,36 +59,36 @@ extras_require['full'] = [pkg for sublist in list(extras_require.values()) for p
 
 
 setup(
-    name="Electrum-BYND",
+    name="Electrum-SUM",
     version=version.ELECTRUM_VERSION,
     python_requires='>={}'.format(MIN_PYTHON_VERSION),
     install_requires=requirements,
     extras_require=extras_require,
     packages=[
-        'electrum_bynd',
-        'electrum_bynd.gui',
-        'electrum_bynd.gui.qt',
-        'electrum_bynd.plugins',
-    ] + [('electrum_bynd.plugins.'+pkg) for pkg in find_packages('electrum_bynd/plugins')],
+        'electrum_sum',
+        'electrum_sum.gui',
+        'electrum_sum.gui.qt',
+        'electrum_sum.plugins',
+    ] + [('electrum_sum.plugins.'+pkg) for pkg in find_packages('electrum_sum/plugins')],
     package_dir={
-        'electrum_bynd': 'electrum_bynd'
+        'electrum_sum': 'electrum_sum'
     },
     package_data={
         '': ['*.txt', '*.json', '*.ttf', '*.otf'],
-        'electrum_bynd': [
+        'electrum_sum': [
             'wordlist/*.txt',
             'locale/*/LC_MESSAGES/electrum.mo',
         ],
-        'electrum_bynd.gui': [
+        'electrum_sum.gui': [
             'icons/*',
         ],
     },
-    scripts=['electrum_bynd/electrum-bynd'],
+    scripts=['electrum_sum/electrum-sum'],
     data_files=data_files,
-    description="Lightweight Beyondcoin Wallet",
+    description="Lightweight Sumcoin Wallet",
     author="Thomas Voegtlin",
     author_email="thomasv@electrum.org",
     license="MIT Licence",
-    url="https://electrum-bynd.com",
-    long_description="""Lightweight Beyondcoin Wallet""",
+    url="https://electrum-sum.org",
+    long_description="""Lightweight Sumcoin Wallet""",
 )

@@ -38,7 +38,7 @@ if sys.version_info[:3] < _min_python_version_tuple:
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
 is_bundle = getattr(sys, 'frozen', False)
-is_local = not is_bundle and os.path.exists(os.path.join(script_dir, "electrum-bynd.desktop"))
+is_local = not is_bundle and os.path.exists(os.path.join(script_dir, "electrum-sum.desktop"))
 is_android = 'ANDROID_DATA' in os.environ
 
 if is_local:  # running from source
@@ -46,7 +46,7 @@ if is_local:  # running from source
     warnings.simplefilter('default', DeprecationWarning)
 
 # move this back to gui/kivy/__init.py once plugins are moved
-os.environ['KIVY_DATA_DIR'] = os.path.abspath(os.path.dirname(__file__)) + '/electrum_bynd/gui/kivy/data/'
+os.environ['KIVY_DATA_DIR'] = os.path.abspath(os.path.dirname(__file__)) + '/electrum_sum/gui/kivy/data/'
 
 if is_local or is_android:
     sys.path.insert(0, os.path.join(script_dir, 'packages'))
@@ -79,17 +79,17 @@ if not is_android:
     check_imports()
 
 
-from electrum_bynd.logging import get_logger, configure_logging
-from electrum_bynd import util
-from electrum_bynd import constants
-from electrum_bynd import SimpleConfig
-from electrum_bynd.wallet import Wallet
-from electrum_bynd.storage import WalletStorage, get_derivation_used_for_hw_device_encryption
-from electrum_bynd.util import print_msg, print_stderr, json_encode, json_decode, UserCancelled
-from electrum_bynd.util import InvalidPassword
-from electrum_bynd.commands import get_parser, known_commands, Commands, config_variables
-from electrum_bynd import daemon
-from electrum_bynd import keystore
+from electrum_sum.logging import get_logger, configure_logging
+from electrum_sum import util
+from electrum_sum import constants
+from electrum_sum import SimpleConfig
+from electrum_sum.wallet import Wallet
+from electrum_sum.storage import WalletStorage, get_derivation_used_for_hw_device_encryption
+from electrum_sum.util import print_msg, print_stderr, json_encode, json_decode, UserCancelled
+from electrum_sum.util import InvalidPassword
+from electrum_sum.commands import get_parser, known_commands, Commands, config_variables
+from electrum_sum import daemon
+from electrum_sum import keystore
 
 _logger = get_logger(__name__)
 
@@ -112,7 +112,7 @@ def init_daemon(config_options):
     storage = WalletStorage(config.get_wallet_path())
     if not storage.file_exists():
         print_msg("Error: Wallet file not found.")
-        print_msg("Type 'electrum-bynd create' to create a new wallet, or provide a path to a wallet with the -w option")
+        print_msg("Type 'electrum-sum create' to create a new wallet, or provide a path to a wallet with the -w option")
         sys.exit(0)
     if storage.is_encrypted():
         if storage.is_encrypted_with_hw_device():
@@ -150,7 +150,7 @@ def init_cmdline(config_options, server):
 
     if cmd.requires_wallet and not storage.file_exists():
         print_msg("Error: Wallet file not found.")
-        print_msg("Type 'electrum-bynd create' to create a new wallet, or provide a path to a wallet with the -w option")
+        print_msg("Type 'electrum-sum create' to create a new wallet, or provide a path to a wallet with the -w option")
         sys.exit(0)
 
     # important warning
@@ -264,7 +264,7 @@ def run_offline_command(config, config_options, plugins):
 
 
 def init_plugins(config, gui_name):
-    from electrum_bynd.plugin import Plugins
+    from electrum_sum.plugin import Plugins
     return Plugins(config, gui_name)
 
 
@@ -328,7 +328,7 @@ if __name__ == '__main__':
         config_options['portable'] = True
 
     if config_options.get('portable'):
-        config_options['electrum_path'] = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'electrum-bynd_data')
+        config_options['electrum_path'] = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'electrum-sum_data')
 
     if not config_options.get('verbosity'):
         warnings.simplefilter('ignore', DeprecationWarning)
@@ -336,7 +336,7 @@ if __name__ == '__main__':
     # check uri
     uri = config_options.get('url')
     if uri:
-        if not uri.startswith('beyondcoin:'):
+        if not uri.startswith('sumcoin:'):
             print_stderr('unknown command:', uri)
             sys.exit(1)
         config_options['url'] = uri
@@ -391,7 +391,7 @@ if __name__ == '__main__':
                 init_plugins(config, 'cmdline')
                 d = daemon.Daemon(config, fd)
                 if config.get('websocket_server'):
-                    from electrum_bynd import websockets
+                    from electrum_sum import websockets
                     websockets.WebSocketServer(config, d.network)
                 if config.get('requests_dir'):
                     path = os.path.join(config.get('requests_dir'), 'index.html')
@@ -419,7 +419,7 @@ if __name__ == '__main__':
         else:
             cmd = known_commands[cmdname]
             if cmd.requires_network:
-                print_msg("Daemon not running; try 'electrum-bynd daemon start'")
+                print_msg("Daemon not running; try 'electrum-sum daemon start'")
                 sys.exit(1)
             else:
                 plugins = init_plugins(config, 'cmdline')

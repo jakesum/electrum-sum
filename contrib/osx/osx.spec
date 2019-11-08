@@ -4,8 +4,8 @@ from PyInstaller.utils.hooks import collect_data_files, collect_submodules, coll
 
 import sys, os
 
-PACKAGE='Electrum-BYND'
-PYPKG='electrum_bynd'
+PACKAGE='Electrum-SUM'
+PYPKG='electrum_sum'
 MAIN_SCRIPT='run_electrum'
 ICONS_FILE=PYPKG + '/gui/icons/electrum.icns'
 APP_SIGN = os.environ.get('APP_SIGN', '')
@@ -97,23 +97,23 @@ binaries += [b for b in collect_dynamic_libs('PyQt5') if 'macstyle' in b[0]]
 
 # We don't put these files in to actually include them in the script but to make the Analysis method scan them for imports
 a = Analysis([electrum+ MAIN_SCRIPT,
-              electrum+'electrum_bynd/gui/qt/main_window.py',
-              electrum+'electrum_bynd/gui/text.py',
-              electrum+'electrum_bynd/util.py',
-              electrum+'electrum_bynd/wallet.py',
-              electrum+'electrum_bynd/simple_config.py',
-              electrum+'electrum_bynd/bitcoin.py',
-              electrum+'electrum_bynd/blockchain.py',
-              electrum+'electrum_bynd/dnssec.py',
-              electrum+'electrum_bynd/commands.py',
-              electrum+'electrum_bynd/plugins/cosigner_pool/qt.py',
-              electrum+'electrum_bynd/plugins/email_requests/qt.py',
-              electrum+'electrum_bynd/plugins/trezor/qt.py',
-              electrum+'electrum_bynd/plugins/safe_t/client.py',
-              electrum+'electrum_bynd/plugins/safe_t/qt.py',
-              electrum+'electrum_bynd/plugins/keepkey/qt.py',
-              electrum+'electrum_bynd/plugins/ledger/qt.py',
-              electrum+'electrum_bynd/plugins/coldcard/qt.py',
+              electrum+'electrum_sum/gui/qt/main_window.py',
+              electrum+'version/gui/text.py',
+              electrum+'electrum_sum/util.py',
+              electrum+'electrum_sum/wallet.py',
+              electrum+'electrum_sum/simple_config.py',
+              electrum+'electrum_sum/bitcoin.py',
+              electrum+'electrum_sum/blockchain.py',
+              electrum+'electrum_sum/dnssec.py',
+              electrum+'electrum_sum/commands.py',
+              electrum+'electrum_sum/plugins/cosigner_pool/qt.py',
+              electrum+'electrum_sum/plugins/email_requests/qt.py',
+              electrum+'electrum_sum/plugins/trezor/qt.py',
+              electrum+'electrum_sum/plugins/safe_t/client.py',
+              electrum+'electrum_sum/plugins/safe_t/qt.py',
+              electrum+'electrum_sum/plugins/keepkey/qt.py',
+              electrum+'electrum_sum/plugins/ledger/qt.py',
+              electrum+'electrum_sum/plugins/coldcard/qt.py',
               ],
              binaries=binaries,
              datas=datas,
