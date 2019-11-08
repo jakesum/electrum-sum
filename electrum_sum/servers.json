@@ -1,3 +1,14 @@
 {
-    // TODO: Add mainnet electrum servers
+    "e1.electrum-bynd.com": {
+        "pruning": "-",
+        "s": "53333",
+        "t": "53332",
+        "version": "1.4"
+    },
+    "e2.electrum-bynd.com": {
+        "pruning": "-",
+        "s": "53333",
+        "t": "53332",
+        "version": "1.4"
+    }
 }

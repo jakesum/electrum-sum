@@ -1,3 +1,14 @@
 {
-    // TODO: Add testnet electrum servers
+    "e1-test.electrum-bynd.com": {
+        "pruning": "-",
+        "s": "54333",
+        "t": "54332",
+        "version": "1.4"
+    },
+    "e2-test.electrum-bynd.com": {
+        "pruning": "-",
+        "s": "54333",
+        "t": "54332",
+        "version": "1.4"
+    }
 }
