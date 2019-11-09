@@ -65,11 +65,11 @@ def inv_dict(d):
 ca_path = certifi.where()
 
 
-base_units = {'BYND':8, 'mBYND':5, 'uBYND':2, 'sat':0}
+base_units = {'SUM':8, 'mSUM':5, 'uSUM':2, 'sat':0}
 base_units_inverse = inv_dict(base_units)
-base_units_list = ['BYND', 'mBYND', 'uBYND', 'sat']  # list(dict) does not guarantee order
+base_units_list = ['SUM', 'mSUM', 'uSUM', 'sat']  # list(dict) does not guarantee order
 
-DECIMAL_POINT_DEFAULT = 8  # BYND
+DECIMAL_POINT_DEFAULT = 8  # SUM
 
 
 class UnknownBaseUnit(Exception): pass
@@ -472,11 +472,11 @@ def user_dir():
     if 'ANDROID_DATA' in os.environ:
         return android_data_dir()
     elif os.name == 'posix':
-        return os.path.join(os.environ["HOME"], ".electrum-bynd")
+        return os.path.join(os.environ["HOME"], ".electrum-sum")
     elif "APPDATA" in os.environ:
-        return os.path.join(os.environ["APPDATA"], "Electrum-BYND")
+        return os.path.join(os.environ["APPDATA"], "Electrum-SUM")
     elif "LOCALAPPDATA" in os.environ:
-        return os.path.join(os.environ["LOCALAPPDATA"], "Electrum-BYND")
+        return os.path.join(os.environ["LOCALAPPDATA"], "Electrum-SUM")
     else:
         #raise Exception("No home directory found in environment variables.")
         return
@@ -648,16 +648,16 @@ def time_difference(distance_in_time, include_seconds):
         return "over %d years" % (round(distance_in_minutes / 525600))
 
 mainnet_block_explorers = {
-    'explorer.beyondcoin.io': ('http://explorer.beyondcoin.io/',
+    'https://sumexplorer.com/': ('https://sumexplorer.com/',
                         {'tx': 'tx/', 'addr': 'address/'}),
-    'system default': ('http://explorer.beyondcoin.io/',
+    'system default': ('https://sumexplorer.com/',
                         {'tx': 'tx/', 'addr': 'address/'}),
 }
 
 testnet_block_explorers = {
-    'testnet-explorer.beyondcoin.io': ('http://testnet-explorer.beyondcoin.io/',
+    'http://sumexplorer-testnet.com/': ('http://sumexplorer-testnet.com/',
                        {'tx': 'tx/', 'addr': 'address/'}),
-    'system default': ('http://testnet-explorer.beyondcoin.io/',
+    'system default': ('http://sumexplorer-testnet.com/',
                        {'tx': 'tx/', 'addr': 'address/'}),
 }
 
