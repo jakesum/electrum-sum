@@ -102,7 +102,7 @@ class QRDialog(WindowModalDialog):
         hbox = QHBoxLayout()
         hbox.addStretch(1)
 
-        config = electrum_ltc.get_config()
+        config = electrum_sum.get_config()
         if config:
             filename = os.path.join(config.path, "qrcode.png")
 
