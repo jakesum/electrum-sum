@@ -55,7 +55,7 @@ class BitcoinMainnet(AbstractNet):
     TESTNET = False
     WIF_PREFIX = 0x80 # Sumcoin TODO: verify WIF prefix
     ADDRTYPE_P2PKH = 63 # Sumcoin TODO: verify P2PKH prefix
-    ADDRTYPE_P2SH = 200 # Sumcoin TODO: verify P2SH prefix
+    ADDRTYPE_P2SH = 191 # Sumcoin TODO: verify P2SH prefix
     SEGWIT_HRP = "sum"
     GENESIS = "37d4696c5072cd012f3b7c651e5ce56a1383577e4edacc2d289ec9b25eebfd5e" # Sumcoin TODO: verify mainnet genesis
     DEFAULT_PORTS = {'t': '53332', 's': '53333'}
