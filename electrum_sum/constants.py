@@ -47,15 +47,15 @@ class AbstractNet:
 
     @classmethod
     def max_checkpoint(cls) -> int:
-        return max(0, len(cls.CHECKPOINTS) * 2016 - 1) # TODO: change to 2880 blocks
+        return max(0, len(cls.CHECKPOINTS) * 2880 - 1) # Sumcoin deedle difficulty measure
 
 
 class BitcoinMainnet(AbstractNet):
 
     TESTNET = False
     WIF_PREFIX = 0xBF # Sumcoin TODO: verify WIF prefix
-    ADDRTYPE_P2PKH = 63 # Sumcoin TODO: verify P2PKH prefix
-    ADDRTYPE_P2SH = 200 # Sumcoin TODO: verify P2SH prefix
+    ADDRTYPE_P2PKH = 63 # 63 is Verified Sumcoin Value  - TODO: verify P2PKH prefix
+    ADDRTYPE_P2SH = 200 # 200 is Verified Sumcoin Value - TODO: verify P2SH prefix
     SEGWIT_HRP = "sum"
     GENESIS = "37d4696c5072cd012f3b7c651e5ce56a1383577e4edacc2d289ec9b25eebfd5e" # Sumcoin TODO: verify mainnet genesis
     DEFAULT_PORTS = {'t': '53332', 's': '53333'}
