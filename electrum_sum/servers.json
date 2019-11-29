@@ -10,5 +10,23 @@
         "s": "53333",
         "t": "53332",
         "version": "1.4"
+    },
+    "e1-sum.electrum-bynd.com": {
+        "pruning": "-",
+        "s": "53333",
+        "t": "53332",
+        "version": "1.4"
+    },
+    "e2-sum.electrum-bynd.com": {
+        "pruning": "-",
+        "s": "53333",
+        "t": "53332",
+        "version": "1.4"
+    },
+    "18.189.211.58": {
+        "pruning": "-",
+        "s": "53333",
+        "t": "53332",
+        "version": "1.4"
     }
 }

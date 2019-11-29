@@ -53,17 +53,17 @@ class AbstractNet:
 class BitcoinMainnet(AbstractNet):
 
     TESTNET = False
-    WIF_PREFIX = 0xBF # Sumcoin TODO: verify WIF prefix
-    ADDRTYPE_P2PKH = 63 # 63 is Verified Sumcoin Value  - TODO: verify P2PKH prefix
-    ADDRTYPE_P2SH = 200 # 200 is Verified Sumcoin Value - TODO: verify P2SH prefix
+    WIF_PREFIX = 0xBF
+    ADDRTYPE_P2PKH = 63
+    ADDRTYPE_P2SH = 200
     SEGWIT_HRP = "sum"
-    GENESIS = "37d4696c5072cd012f3b7c651e5ce56a1383577e4edacc2d289ec9b25eebfd5e" # Sumcoin TODO: verify mainnet genesis
+    GENESIS = "37d4696c5072cd012f3b7c651e5ce56a1383577e4edacc2d289ec9b25eebfd5e"
     DEFAULT_PORTS = {'t': '53332', 's': '53333'}
     DEFAULT_SERVERS = read_json('servers.json', {})
     CHECKPOINTS = read_json('checkpoints.json', [])
 
     XPRV_HEADERS = {
-        'standard':    0x0488b41c,  # xprv  ## Sumcoin TODO: verify xprv header
+        'standard':    0x0488b41c,  # xprv
         'p2wpkh-p2sh': 0x049d7878,  # yprv
         'p2wsh-p2sh':  0x0295b005,  # Yprv
         'p2wpkh':      0x04b2430c,  # zprv
@@ -71,7 +71,7 @@ class BitcoinMainnet(AbstractNet):
     }
     XPRV_HEADERS_INV = inv_dict(XPRV_HEADERS)
     XPUB_HEADERS = {
-        'standard':    0x0488abe6,  # xpub  ## Sumcoin TODO: verify xpub header
+        'standard':    0x0488abe6,  # xpub
         'p2wpkh-p2sh': 0x049d7cb2,  # ypub
         'p2wsh-p2sh':  0x0295b43f,  # Ypub
         'p2wpkh':      0x04b24746,  # zpub
@@ -84,17 +84,17 @@ class BitcoinMainnet(AbstractNet):
 class BitcoinTestnet(AbstractNet):
 
     TESTNET = True
-    WIF_PREFIX = 0xbf # Sumcoin TODO: verify WIF prefix
-    ADDRTYPE_P2PKH = 125 # Sumcoin TODO: verify P2PKH prefix
-    ADDRTYPE_P2SH = 8 # Sumcoin TODO: verify P2SH prefix
+    WIF_PREFIX = 0xbf
+    ADDRTYPE_P2PKH = 125
+    ADDRTYPE_P2SH = 8
     SEGWIT_HRP = "tsum"
-    GENESIS = "8f4af36aa0bdb9ae5a34d191bcbd80748569e4ef2e47587f0a3f5749dde17eea" # Sumcoin TODO: verify testnet genesis
+    GENESIS = "8f4af36aa0bdb9ae5a34d191bcbd80748569e4ef2e47587f0a3f5749dde17eea"
     DEFAULT_PORTS = {'t': '54332', 's': '54333'}
     DEFAULT_SERVERS = read_json('servers_testnet.json', {})
     CHECKPOINTS = read_json('checkpoints_testnet.json', [])
 
     XPRV_HEADERS = {
-        'standard':    0x063289cc,  # tprv  ## Sumcoin TODO: verify tprv header
+        'standard':    0x063289cc,  # tprv
         'p2wpkh-p2sh': 0x044a4e28,  # uprv
         'p2wsh-p2sh':  0x024285b5,  # Uprv
         'p2wpkh':      0x045f18bc,  # vprv
@@ -102,7 +102,7 @@ class BitcoinTestnet(AbstractNet):
     }
     XPRV_HEADERS_INV = inv_dict(XPRV_HEADERS)
     XPUB_HEADERS = {
-        'standard':    0x01378096,  # tpub  ## Sumcoin TODO: verify tpub header
+        'standard':    0x01378096,  # tpub
         'p2wpkh-p2sh': 0x044a5262,  # upub
         'p2wsh-p2sh':  0x024289ef,  # Upub
         'p2wpkh':      0x045f1cf6,  # vpub
@@ -115,7 +115,7 @@ class BitcoinTestnet(AbstractNet):
 class BitcoinRegtest(BitcoinTestnet):
 
     SEGWIT_HRP = "rsum"
-    GENESIS = "19decb2815da5a7779c72af78fe6268c2a76ec94e940503a6c3ffafb282ef397" # Sumcoin TODO: verify regtest genesis
+    GENESIS = "19decb2815da5a7779c72af78fe6268c2a76ec94e940503a6c3ffafb282ef397"
     DEFAULT_SERVERS = read_json('servers_regtest.json', {})
     CHECKPOINTS = []
 
