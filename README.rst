@@ -1,19 +1,15 @@
 Electrum-SUM - Lightweight Sumcoin client
 =========================================
 
-Electrum-SUM is a port of Electrum, the Bitcoin wallet, to Sumcoin.
+Electrum-SUM is a port of Electrum-BYND, the Beyondcoin wallet form Electrum, the Bitcoin wallet, to Sumcoin.
 
 ::
 
   Licence: MIT Licence
   Original Author: Thomas Voegtlin
-  Port Maintainer: Tech1k
+  Port Maintainer: Tech1k (Kristian Kramer)
   Language: Python (>= 3.6)
   Homepage: https://electrum-sum.org/
-
-
-
-
 
 
 Getting started
@@ -46,7 +42,6 @@ before you can run Electrum-SUM. Read the next section, "Development
 Version".
 
 
-
 Development version
 ===================
 
@@ -69,8 +64,6 @@ Create translations (optional)::
 
     sudo apt-get install python-requests gettext
     ./contrib/pull_locale
-
-
 
 
 Creating Binaries
