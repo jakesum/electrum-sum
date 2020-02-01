@@ -1,7 +1,7 @@
 Electrum-SUM - Lightweight Sumcoin client
 =========================================
 
-Electrum-SUM is a port of Electrum-BYND, the Beyondcoin wallet form Electrum, the Bitcoin wallet, to Sumcoin.
+Electrum-SUM is a port of Electrum-BTC, the Bitcoin wallet, to Sumcoin.
 
 ::
 
@@ -47,7 +47,7 @@ Development version
 
 Check out the code from GitHub::
 
-    git clone git://github.com/Tech1k/electrum-sum.git
+    git clone git://github.com/jakesum/electrum-sum.git
     cd electrum-sum
 
 Run install (this should install dependencies)::
