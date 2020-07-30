@@ -32,18 +32,18 @@ After downloading, uncompress it.
 
 Make sure it is the "selected" xcode (e.g.):
 
-    sudo xcode-select -s $HOME/Downloads/Xcode.app/Contents/Developer/
-
+    sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+    
 #### 1.1b Build QR scanner separately on newer Mac
 
 Alternatively, you can try building just the QR scanner on newer macOS.
 
 On newer Mac, run:
 
+    cd electrum-sum
     pushd contrib/osx/CalinsQRReader; xcodebuild; popd
     cp -r contrib/osx/CalinsQRReader/build prebuilt_qr
-
-Move `prebuilt_qr` to `contrib/osx/CalinsQRReader`.
+    mv prebuilt_qr contrib/osx/CalinsQRReader/
 
 
 #### 1.2 Build Electrum-SUM
