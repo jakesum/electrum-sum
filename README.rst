@@ -18,7 +18,13 @@ Getting started
 Electrum-SUM is a pure python application. If you want to use the
 Qt interface, install the Qt dependencies::
 
+Linux
+
     sudo apt-get install python3-pyqt5
+
+Mac
+
+    brew install python3-pyqt5
 
 If you downloaded the official package (tar.gz), you can run
 Electrum-SUM from its root directory without installing it on your
@@ -31,7 +37,12 @@ You can also install Electrum-SUM on your system, by running this command::
 
     sudo apt-get install python3-setuptools
     python3 -m pip install .[fast]
+    
+Mac
 
+    brew install python3-setuptools
+    python3 -m pip install .[fast]
+  
 This will download and install the Python dependencies used by
 Electrum-SUM instead of using the 'packages' directory.
 The 'fast' extra contains some optional dependencies that we think
