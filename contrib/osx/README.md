@@ -43,7 +43,7 @@ On newer Mac, run:
     pushd contrib/osx/CalinsQRReader; xcodebuild; popd
     cp -r contrib/osx/CalinsQRReader/build prebuilt_qr
 
-Move `prebuilt_qr` to El Capitan: `contrib/osx/CalinsQRReader/prebuilt_qr`.
+Move `prebuilt_qr` to `contrib/osx/CalinsQRReader`.
 
 
 #### 1.2 Build Electrum-SUM
